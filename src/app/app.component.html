@@ -1,4 +1,6 @@
 <h1>{{ title }}</h1>
-<img [src]="imgUrl" alt="BridgeLabz Logo" />
-<br>
-<button (click)="openBridgeLabzSite()">Go to BridgeLabz</button>
+<input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+<p *ngIf="userName.length > 0 && !isValidName()" style="color: red;">
+  Name must start with a capital letter and have at least 3 characters.
+</p>
+<p *ngIf="isValidName()">Hello from BridgeLabz, {{ userName }}!</p>
